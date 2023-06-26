@@ -4,7 +4,7 @@ import "../quote.css";
 const Quote = (props) => {
   const { quote, author } = props;
   return (
-    <>
+    <section>
       <div className="quote-box">
         <div className="quoter-box">
           <p>{quote}</p>
@@ -13,7 +13,7 @@ const Quote = (props) => {
           <p> - {author}</p>
         </div>
       </div>
-    </>
+    </section>
   );
 };
 
