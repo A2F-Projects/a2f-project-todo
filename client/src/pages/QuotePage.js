@@ -46,7 +46,7 @@ const QuotePage = () => {
   };
 
   return (
-    <>
+    <section>
       <div className="page">
         <div className="form-quote">
           <form id="form">
@@ -81,7 +81,7 @@ const QuotePage = () => {
             : null}
         </div>
       </div>
-    </>
+    </section>
   );
 };
 
