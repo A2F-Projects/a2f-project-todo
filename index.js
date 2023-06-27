@@ -11,7 +11,7 @@ app.use(cors());
 require("./models/quote");
 
 mongoose
-  .connect(process.env.MONGODB_CONNECTION_STRING, {
+  .connect(process.env.MONGODB_CONNECTION_STRING, { // connection string updated AT-5
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
