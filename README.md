@@ -30,3 +30,4 @@ $ npm install
 $ cd client 
 $ npm install
 ```
+# do not forget npm run build 
