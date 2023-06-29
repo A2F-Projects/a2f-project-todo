@@ -1,5 +1,5 @@
 //Testing
-print("hello world");
+document.write("Hello World!");
 
 const express = require("express");
 const mongoose = require("mongoose");
