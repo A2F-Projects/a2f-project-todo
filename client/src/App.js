@@ -3,6 +3,7 @@ import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import QuotePage from "./pages/QuotePage";
 import Quote from "./component/quote";
+import FooterPage from "./pages/FooterPage";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Router>
         <Route exact path="/">
           <QuotePage />
+          <FooterPage />
         </Route>
       </Router>
     </div>

@@ -1,0 +1,17 @@
+ /* THe height and the flex display and direction make sure that the footer
+  stays at the bottom of the page  */
+  .App {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  
+  footer {
+    background-color: black;
+    color: white;
+    text-align: left;
+    margin-top: auto;
+    font-size: 14px;
+ 
+  }
