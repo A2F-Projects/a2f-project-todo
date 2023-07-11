@@ -5,7 +5,7 @@ const HeaderPage = () => {
     return (
         <section id="header" className={`${layout.section} ${styles.flexCenter}`}>
             <div className={`text-center ${styles.heading1}`}>
-                TODO Listssssssssss
+                TODO List
             </div>
         </section>
     );
