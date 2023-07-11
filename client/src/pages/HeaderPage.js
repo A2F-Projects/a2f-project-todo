@@ -1,11 +1,13 @@
 import React from 'react';
-import '../header.css';
+import styles, { layout } from "../style";
 
 const HeaderPage = () => {
     return (
-        <div className="header">
-            <h1>TODO List</h1>
-        </div>
+        <section id="header" className={`${layout.section} ${styles.flexCenter}`}>
+            <div className={`text-center ${styles.heading1}`}>
+                TODO Listssssssssss
+            </div>
+        </section>
     );
 }
 

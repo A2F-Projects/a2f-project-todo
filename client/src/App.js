@@ -1,8 +1,7 @@
-import "./quote.css";
+import "./assets/main.css";
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import QuotePage from "./pages/QuotePage";
-import Quote from "./component/quote";
 import FooterPage from "./pages/FooterPage";
 import HeaderPage from "./pages/HeaderPage";
 
@@ -11,9 +10,18 @@ function App() {
     <div className="App">
       <Router>
         <Route exact path="/">
-          <HeaderPage />
-          <QuotePage />
-          <FooterPage />
+          <div class="min-h-screen flex flex-col">
+
+            <div class="flex-grow">
+              <HeaderPage />
+              <QuotePage />
+            </div>
+
+            <footer class="mt-auto">
+              <FooterPage />
+            </footer>
+            
+          </div>
         </Route>
       </Router>
     </div>
