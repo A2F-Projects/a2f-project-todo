@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import QuotePage from "./pages/QuotePage";
 import FooterPage from "./pages/FooterPage";
 import HeaderPage from "./pages/HeaderPage";
+import ToDoList from "./component/ToDoList";
+import TodoList from "./component/ToDoListAndInput";
 
 function App() {
   return (
@@ -14,7 +16,10 @@ function App() {
 
             <div class="flex-grow">
               <HeaderPage />
-              <QuotePage />
+              {/* <QuotePage /> */}
+                <div class="flex items-center justify-center">
+                <ToDoList /> {/* This one only adds an empty card with no values or input */}
+              </div>
             </div>
 
             <footer class="mt-auto">
