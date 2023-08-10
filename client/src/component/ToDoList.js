@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import AddTaskButton from './AddTask'; // Import the button component
 import EmptyCard from './EmptyCard';
 
@@ -10,15 +10,12 @@ const ToDoList = () => {
 
   // Function to add a new task to the todo list
   const addCard = () => {
-    setEmptyCards((currCards) => [...currCards, {id: currCards.length}]); //"..." copies all the values from the old array
-    let todoList = document.querySelector('#todo-list');
-    todoList.scrollTop = todoList.scrollHeight;
-    
+    setEmptyCards((currCards) => [...currCards, {id: currCards.length}]); //"..." copies all the values from the old array    
   };
 
   return (
     <div className="flex flex-col">
-      <ul id="todo-list" className="border-4 border-yellow-500 max-h-80 overflow-y-auto list-none" style={{height: "20rem"}}>
+      <ul className="border-4 border-yellow-500 max-h-80 overflow-y-auto list-none" style={{height: "20rem"}}>
         {emptyCards.map((card) => ( //map is what renders the data into the screen
           <li key={card.id }>
             <EmptyCard/>
