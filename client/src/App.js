@@ -6,6 +6,7 @@ import FooterPage from "./pages/FooterPage";
 import HeaderPage from "./pages/HeaderPage";
 import ToDoList from "./component/ToDoList";
 import TodoList from "./component/ToDoListAndInput";
+import CardList from "./pages/CardList";
 
 function App() {
   return (
@@ -16,9 +17,8 @@ function App() {
 
             <div class="flex-grow">
               <HeaderPage />
-              {/* <QuotePage /> */}
                 <div class="flex items-center justify-center">
-                <ToDoList /> {/* This one only adds an empty card with no values or input */}
+                <CardList /> {/* Shows cards and their data from db*/}
               </div>
             </div>
 

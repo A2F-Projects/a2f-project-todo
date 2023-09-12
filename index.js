@@ -9,6 +9,7 @@ app.use(cors());
 
 //import your models
 require("./models/quote");
+require("./models/card"); //model for my cards
 
 mongoose
   .connect(process.env.MONGODB_CONNECTION_STRING, {
@@ -24,6 +25,7 @@ app.use(bodyParser.json());
 
 //import routes
 require("./routes/quoteRoute.js")(app);
+require("./routes/cardRoute.js")(app); // route for the cards
 
 const PORT = process.env.PORT || 5000;
 
