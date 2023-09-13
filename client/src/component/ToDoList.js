@@ -10,13 +10,12 @@ const ToDoList = () => {
 
   // Function to add a new task to the todo list
   const addCard = () => {
-    setEmptyCards((currCards) => [...currCards, {id: currCards.length}]); //"..." copies all the values from the old array
-
+    setEmptyCards((currCards) => [...currCards, {id: currCards.length}]); //"..." copies all the values from the old array    
   };
 
   return (
     <div className="flex flex-col">
-      <ul className="border-4 border-yellow-500 max-h-80 overflow-y-auto list-none">
+      <ul className="border-4 border-yellow-500 max-h-80 overflow-y-auto list-none" style={{height: "20rem"}}>
         {emptyCards.map((card) => ( //map is what renders the data into the screen
           <li key={card.id }>
             <EmptyCard/>
@@ -26,7 +25,7 @@ const ToDoList = () => {
       {/* placed button into its own div to help with placing on the page */}
       <div className="self-end">
             <AddTaskButton onClick  ={addCard}/> 
-        </div>
+        </div>         
       
     
     </div>
