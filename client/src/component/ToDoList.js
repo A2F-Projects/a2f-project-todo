@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import AddTaskButton from './AddTask'; // Import the button component
 import EmptyCard from './EmptyCard';
-import SearchBar from './SearchBar';
+import QuotePage from '../pages/QuotePage';
 
 const ToDoList = () => {
   const [emptyCards, setEmptyCards] = useState([<div className="bg-gray-200 p-4 m-2 rounded-md w-96">
@@ -17,7 +17,7 @@ const ToDoList = () => {
   return (
     <div className="flex flex-col">
       <div>
-        <SearchBar />
+        <QuotePage />
       </div>
       <ul className="border-4 border-yellow-500 max-h-80 overflow-y-auto list-none">
         {emptyCards.map((card) => ( //map is what renders the data into the screen

@@ -5,23 +5,31 @@ import Card from "../component/cards";
 const CardList = () => {
   const [cardsList, setCardsList] = useState([]);
   const [clickSubmit, setClickSubmit] = useState(false);
+  const [searchInput, setSearchInput] = useState('');
 
   useEffect(() => {
     renderCards();
-  }, [clickSubmit]);
+  }, [clickSubmit, searchInput]);
 
   const renderCards = () => {
     axios
       .get(`/cards/get`)
       .then((res) => {
-        setCardsList(res.data);
+        const tasks = res.data.filter((task) => task.title.toLowerCase().includes(searchInput.toLowerCase()));
+        console.log(searchInput);
+        setCardsList(tasks);
+
         console.log("setCardsList");
-        console.log(res.data);
+        console.log(tasks);
       })
       .catch((err) => {
         console.log("ERR", err);
       });
   };
+
+  const handleChange = (e) => {
+    setSearchInput(e.target.value);
+  }
 
   const submitNewCard = (e) => {
     e.preventDefault();
@@ -49,6 +57,12 @@ const CardList = () => {
 
   return (
     <section>
+        <div className="search-bar">
+          <input type="text" value={searchInput} onChange={handleChange} placeholder="Search" className="border-4 bg-gray-200 m-2"/>
+        </div>
+
+    
+
         <div className="flex flex-col">
             <ul className="border-4 border-yellow-500 rounded-lg p-4 max-h-80 overflow-y-auto list-none">
             {cardsList.length > 0 ? (
@@ -62,7 +76,7 @@ const CardList = () => {
             )}
             </ul>
         </div>
-        
+       
         <div>
         <form id="form">
             <div>
@@ -77,7 +91,7 @@ const CardList = () => {
               <label>Enter card title:</label>
               <input name="date" id="date" type="date" required></input>
             </div>
-            <button class="bg-purple-700 hover:bg-purple-800 text-white font-bold py-2 px-4 rounded-full"
+            <button className="bg-purple-700 hover:bg-purple-800 text-white font-bold py-2 px-4 rounded-full"
               name="button"
               type="submit"
               onClick={(e) => submitNewCard(e)}
