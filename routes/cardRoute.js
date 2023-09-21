@@ -27,6 +27,22 @@ module.exports = (app) => {
           return res.send(error);
         }
       });
+
+      app.delete(`/cards/delete/:cardId`, async (req, res) => {
+        try {
+          const cardId = req.params.cardId;
+          // Use Mongoose to find and remove the card by its ID
+          const deletedCard = await Card.findByIdAndRemove(cardId);
+          
+          if (!deletedCard) {
+            return res.status(404).json({ message: "Card not found" });
+          }
+          
+          return res.json({ message: "Card deleted successfully" });
+        } catch (error) {
+          return res.status(500).json({ message: "Internal server error" });
+        }
+      });
       
 };
   

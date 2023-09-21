@@ -50,18 +50,24 @@ const CardList = () => {
   return (
     <section>
         <div className="flex flex-col">
-            <ul className="border-4 border-yellow-500 rounded-lg p-4 max-h-80 overflow-y-auto list-none">
+            <ul className="border-4 border-yellow-500 rounded-lg p-4 max-h-80 w-96 overflow-y-auto list-none">
             {cardsList.length > 0 ? (
-                cardsList.map((card) => (
+              cardsList.map((card) => (
                 <li key={card._id}>
-                    <Card title={card.title} desc={card.desc} date={card.date}/>
+                  <Card
+                    title={card.title}
+                    desc={card.desc}
+                    date={card.date}
+                    id={card._id}
+                    refreshCards={renderCards}
+                  />
                 </li>
-                ))
+              ))
             ) : (
-                <p>No cards available.</p>
+              <p>No cards available.</p>
             )}
             </ul>
-        </div>
+          </div>
         
         <div>
         <form id="form">

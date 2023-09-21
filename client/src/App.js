@@ -1,11 +1,8 @@
 import "./assets/main.css";
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import QuotePage from "./pages/QuotePage";
 import FooterPage from "./pages/FooterPage";
 import HeaderPage from "./pages/HeaderPage";
-import ToDoList from "./component/ToDoList";
-import TodoList from "./component/ToDoListAndInput";
 import CardList from "./pages/CardList";
 
 function App() {
