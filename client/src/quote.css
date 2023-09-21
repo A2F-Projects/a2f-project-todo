@@ -41,3 +41,12 @@ button {
   max-width: fit-content;
   margin-left: auto;
 }
+
+.search-bar {
+  background-color: rgb(137, 43, 226);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 20px;
+}
